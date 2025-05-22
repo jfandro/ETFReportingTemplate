@@ -1,4 +1,4 @@
-This MVC5 Web App is available for all profesional users of etfreporting.com
+This MVC5 Web App is an open source wen app. It's available for all profesional users of etfreporting.com
 After downloading the code, open the project with Visual studio and change the following settings:
 
 Before changing the following settings, you must have an active account registered on etfreporting.com (not access with Google or LinkedIn). Your acount must be marked as "profesional".
