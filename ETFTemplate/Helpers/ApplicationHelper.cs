@@ -134,14 +134,6 @@ namespace ETFTemplate.Helpers
         }
 
         /// <summary>
-        /// Returns the name of robot javascript
-        /// </summary>
-        public static string RoboScript
-        {
-            get { return ConfigurationManager.AppSettings["RoboScript"]; }
-        }
-
-        /// <summary>
         /// Returns true if current app is a template
         /// </summary>
         public static bool IsTemplate
@@ -174,19 +166,127 @@ namespace ETFTemplate.Helpers
         }
 
         /// <summary>
-        /// Returns the question id linked to the radar
+        /// Returns the question code linked to the thematics
         /// </summary>
-        public static int RadarQuestion
+        public static string TargetedThematics
         {
-            get { return Convert.ToInt16(ConfigurationManager.AppSettings["RadarQuestion"]); }
+            get { return ConfigurationManager.AppSettings["TargetedThematics"]; }
+        }
+
+        /// <summary>
+        /// Returns the question code linked to the exclusion
+        /// </summary>
+        public static string ExcludedThematics
+        {
+            get { return ConfigurationManager.AppSettings["ExcludedThematics"]; }
+        }
+
+        /// <summary>
+        /// Returns the rate of management fees
+        /// </summary>
+        public static int ManagementFeesRate
+        {
+            get { return Convert.ToInt32(ConfigurationManager.AppSettings["ManagementFeesRate"]); }
+        }
+
+        /// <summary>
+        /// Returns the payment period id for management fees
+        /// </summary>
+        public static int ManagementFeesPeriod
+        {
+            get { return Convert.ToInt32(ConfigurationManager.AppSettings["ManagementFeesPeriod"]); }
+        }
+    }
+
+    /// <summary>
+    /// A static class for videos
+    /// </summary>
+    public static class VideoHelper
+    {
+        /// <summary>
+        /// Returns true if video for start
+        /// </summary>
+        public static bool Starting
+        {
+            get { return Convert.ToBoolean(ConfigurationManager.AppSettings["Video-Starting"]); }
+        }
+
+        /// <summary>
+        /// Returns true if video for questionnaire
+        /// </summary>
+        public static bool Questionnaire
+        {
+            get { return Convert.ToBoolean(ConfigurationManager.AppSettings["Video-Questionnaire"]); }
+        }
+
+        /// <summary>
+        /// Returns true if video for portfolio
+        /// </summary>
+        public static bool Portfolio
+        {
+            get { return Convert.ToBoolean(ConfigurationManager.AppSettings["Video-Portfolio"]); }
+        }
+
+        /// <summary>
+        /// Returns true if video for expositions
+        /// </summary>
+        public static bool Exposures
+        {
+            get { return Convert.ToBoolean(ConfigurationManager.AppSettings["Video-Exposures"]); }
+        }
+
+        /// <summary>
+        /// Returns true if video for contact
+        /// </summary>
+        public static bool Contact
+        {
+            get { return Convert.ToBoolean(ConfigurationManager.AppSettings["Video-Contact"]); }
+        }
+    }
+
+    /// <summary>
+    /// A static class for robo settings
+    /// </summary>
+    public static class RoboHelper
+    {
+        /// <summary>
+        /// Returns the name of robo
+        /// </summary>
+        public static string Name
+        {
+            get { return ConfigurationManager.AppSettings["RoboName"]; }
         }
 
         /// <summary>
         /// Returns the date from which the robo run backtest
         /// </summary>
-        public static DateTime RoboStartDate
+        public static DateTime StartDate
         {
             get { return Convert.ToDateTime(ConfigurationManager.AppSettings["RoboStartDate"]); }
+        }
+
+        /// <summary>
+        /// Returns the name of robot javascript
+        /// </summary>
+        public static string Script
+        {
+            get { return ConfigurationManager.AppSettings["RoboScript"]; }
+        }
+
+        /// <summary>
+        /// Returns the ID of linked questionnaire
+        /// </summary>
+        public static int Questionnaire
+        {
+            get { return Convert.ToInt16(ConfigurationManager.AppSettings["LeadQuestionnaire"]); }
+        }
+
+        /// <summary>
+        /// Returns the contact email
+        /// </summary>
+        public static string ContactEmail
+        {
+            get { return ConfigurationManager.AppSettings["ContactEmail"]; }
         }
     }
 }

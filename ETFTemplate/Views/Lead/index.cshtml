@@ -1,4 +1,5 @@
 ﻿@model ETFTemplate.Models.LeadConnection
+@using System.Configuration;
 
 @{
     Layout = "~/Views/Shared/_layout5NoMenu.cshtml";
@@ -22,16 +23,12 @@
 
 <section id="section-start" class="section-start w-100">
 
-    <div class="">
-        <div class="p-4 p-md-5 mb-4">
-            <h1 class="display-4">Bonjour,</h1>
-            <p>
-                Si vous êtes en quête d'une solution financière adaptée à votre profil, vos attentes et
-                vos projets, alors vous êtes au bon endroit.
-                On se retrouve dans quelques instants avec une proposition personalisée
-                au terme de ce questionnaire de connaissance.
-            </p>
-        </div>
+    <div class="p-4 p-md-5 mb-4">
+        <h1 class="display-4">Bonjour,</h1>
+        <p>
+            Construisons ensemble une solution financière adaptée à votre profil, vos attentes et
+            vos projets.
+        </p>
     </div>
 
     <div class="holder d-flex align-items-center justify-content-center">
@@ -43,15 +40,31 @@
 
                 <div class="container-kyc col-lg-7 mx-auto" style="display:none;">
                     <h2>Synthèse de votre profil</h2>
-                    <div class="py-3">
-                        <p>
-                            Avant de concevoir et de voir en détail notre proposition, nous vous invitons à valider les réponses
-                            données à notre questionnaire. Le niveau de risques ou l'impact du portefeuille
-                            que nous allons vous dépendent de celles-ci.
-                        </p>
-                    </div>
+
+                    @if (VideoHelper.Questionnaire)
+                    {
+                        <div class="py-3 w-100">
+                            <video id="video-questionnaire" controls="controls" class="w-100">
+                                <source src="~/Videos/Questionnaire.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="py-3">
+                            <p>
+                                Avant de concevoir et de voir en détails notre proposition,
+                                nous vous invitons à relire vos réponses.
+                                Le niveau de risques ou l'impact
+                                en terme de financement durable du portefeuille
+                                réalisé pour vous et votre projet
+                                dépendent de celles-ci.
+                            </p>
+                        </div>
+                    }
+
                     <div class="table-responsive">
-                        <table id="kyc" class="table">
+                        <table id="kyc" class="table small">
                             <thead>
                                 <tr>
                                     <th>A la question</th>
@@ -66,18 +79,22 @@
                     <h2 class="py-3">Validation</h2>
                     <div>
                         <p>
-                            Avant de concevoir notre proposition et voir en détail ses différentes composantes,
-                            merci de <b>valider la synthèse</b> ci-dessus.
-                            Le niveau de risques ou l'impact du portefeuille en matière de durabilité
-                            en dépendent.
+                            Merci de <b>valider</b> la synthèse ci-dessus avant de lancer
+                            votre profilage et la conception de notre proposition
+                            qui débutera le @RoboHelper.StartDate.ToLongDateString()
+                            afin de pouvoir vous donner une vision des comportements passés.
+                            Pour rappel, les performances et les risques passés ne présagent pas
+                            des performances et des risques futurs.
                         </p>
                     </div>
 
                     <form class="creation-form" method="post">
 
-                        <input type="hidden" id="StartDate" name="StartDate" value="@ApplicationHelper.RoboStartDate.ToString("yyyy-MM-dd")" />
+                        <input type="hidden" id="StartDate" name="StartDate" value="@RoboHelper.StartDate.ToString("yyyy-MM-dd")" />
                         <input type="hidden" id="RiskLevel" name="RiskLevel" value="4" />
                         <input type="hidden" id="IsModel" name="IsModel" value="false" />
+                        <input type="hidden" id="ManagementFeesRate" name="ManagementFeesRate" value="0.7" />
+                        <input type="hidden" id="ManagementFeesPeriod" name="ManagementFeesPeriod" value="4" />
                         <input type="hidden" id="Name" name="Name" value="Notre proposition" />
                         <input type="hidden" id="Code" name="Code" value="" />
                         <input type="hidden" id="minutes" name="minutes" value="60" />
@@ -102,47 +119,157 @@
 
 </section>
 
+<!-- Running -->
+<section id="section-running" class="w-100 align-content-center" style="display:none;height:100vh;min-height:100vh;">
+    <h2>Construction en cours ...</h2>
+</section>
+
 <section id="section-portfolio" class="page-section section-portfolio visually-hidden">
 
     <div class="d-flex align-items-center justify-content-center">
         <div class="container">
             <div class="p-4 p-md-5 mb-4">
-                <h1 class="display-4">Notre proposition</h1>
-                <p>
-                    Il est temps de découvrir notre proposition.
-                    Celle-ci est construite à partir de nos <b>portefeuilles modèles</b>.
-                    Nous avons retenu ceux qui répondent favorablement à vos objectifs,
-                    puis nous avons ajusté leurs poids
-                    afin de coller à votre appétence aux risques tel que
-                    nous l'avons compris via notre questionnaire.
-                    Si cette sélection ou cette répartition ne correspondent pas à vos attentes,
-                    n'hésitez pas à <a href="#" class="btn-redo">revenir sur le questionnaire</a>.
-                </p>
-
-                <div class="py-5">
-                    <h2>Nos modèles</h2>
+                <h2 class="display-2">Synthèse de notre proposition</h2>
+                @if (VideoHelper.Portfolio)
+                {
+                    <div class="py-3 w-100">
+                        <video id="video-portfolio" controls="controls" class="w-100">
+                            <source src="~/Videos/Portfolio.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <p></p>
+                }
+                else
+                {
                     <p>
-                        Avant de découvrir notre proposition en détails, voici les <b>modèles</b> retenus.
-                        Si cette sélection ne correspond pas à vos attentes,
-                        n'hésitez pas à <a href="#" class="btn-redo">revenir sur le questionnaire</a>.
+                        Il est temps de découvrir notre proposition
+                        dont la composition est faite de <b>portefeuilles modèles</b>
+                        issue de notre librairie.
+                        En premier lieu, nous avons retenu les modèles qui répondent favorablement
+                        à vos objectifs,
+                        puis nous avons ajusté le poids de chaque modèle
+                        pour que la composition retenue et présentée ci-dessous
+                        colle au mieux à votre appétence aux risques tel que
+                        nous l'avons compris via notre questionnaire de connaissance.
                     </p>
-                    <div id="assets" class="assets-container card-group p-lg-5 p-sm-2 p-xs-0 "></div>
+                    <p>
+                        Avant de découvrir le contenu en détails de notre proposition,
+                        voici les <b>modèles</b> retenus pour vous.
+                    </p>
+                }
+
+
+            <div id="models-panel" class="py-5">
+                <h2 class="display-2">Modèles retenus</h2>
+                <p>
+                    Un modèle est un sous-portefeuille investi en ETF cohérents pour atteindre un objectif donné.
+                    Si la sélection des modèles présentée ci-dessous ne répond pas à vos attentes,
+                    n'hésitez pas à <a href="#" class="btn-redo">revenir sur vos réponses</a> à notre questionnaire,
+                    ou à prendre directement <a href="#contact">contact avec nous</a>.<br />
+                    La référence de votre dossier : <span id="ref"></span>
+                </p>
+                <div id="assets" class="assets-container card-group py-lg-5 py-sm-2 py-xs-0 "></div>
+            </div>
+
+                <div class="container w-100 h-100">
+                    @if (VideoHelper.Exposures)
+                    {
+                        <div class="py-3 w-100">
+                            <video controls="controls" class="w-100">
+                                <source src="~/Videos/Expositions.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    }
                 </div>
 
-                <div class="py-5">
-                    <h2>Expositions</h2>
+                <div id="exposure-panel" class="py-5">
+                    <h2 class="display-2">Expositions</h2>
                     <p>
-                        Une fois nos <b>modèles</b> agrégés, voici le contenu détaillé de notre portefeuille.
-                        Nous vous offrons plusieurs analyses de ce dernier afin de porter à
-                        votre connaissance toutes les expositions et tous les risques portés à ce jour.
-                        Si cette proposition vous convient, je vous invite à <a href="#contact">prendre contact</a>
-                        avec moi afin d'améliorer celle-ci.
+                        Découvrons maintenant le contenu de notre proposition après consolidation de nos modèles.
+                        Nous vous proposons plusieurs angles d'analyses afin de porter à
+                        votre connaissance toutes les expositions (et donc risques) connues à ce jour.
+                        Nous abordons un peu plus loin dans cette synthèse
+                        les notions de <a href="#nav-panel">performances</a>,
+                        de <a href="#taxonomy-panel">financement durable</a>
+                        et de <a href="#risk-panel">risques</a>.
+                        Au terme de cette présentation, je vous invite à <a href="#contact">prendre contact</a>
+                        avec moi afin de vous expliquer ces choix et cette répartition de vive voix.
+                        Et améliorer cette proposition le cas échéant.
                     </p>
                     <div class="py-5">
                         @Html.Partial("_portfolio")
                     </div>
                 </div>
 
+                <div id="taxonomy-panel" class="py-5">
+                    <h3 class="display-3">Taxonomie</h3>
+                    <p>
+                        La réglementation nous oblige à vous présenter le plus clairement possible
+                        l'impact de cette proposition sur l'environnement. Pour cela, nous avons collecter
+                        et rassembler toutes informations permettant de vous accompagner
+                        dans cette analyse.
+                    </p>
+                    <div class="py-5">
+                        @Html.Partial("_taxonomy")
+                    </div>
+                </div>
+
+                <div id="results-panel" class="py-5">
+                    <h2 class="display-2">Rendement</h2>
+                    <p>
+                        Maintenant que vous connaissez le contenu de notre offre,
+                        nous vous proposons de découvrir
+                        les principaux résultats réalisés par cette proposition, et
+                        en particulier le rendement annuel en tenant compte
+                        de vos apports
+                        depuis sa création le @RoboHelper.StartDate.ToLongDateString().
+                    </p>
+                    <p>
+                        <b>Important :</b> Notre rémunération est présentée dans le tableau ci-dessous,
+                        dans la rubrique <b>frais de gestion</b>.
+                        Ils sont de @ApplicationHelper.ManagementFeesRate% (taux annuel) et s'appliquent à la valeur de marché de vos actifs.
+                        Ils sont calculés, provisionnés et intégrés quotidiennement
+                        dans la valeur de votre portefeuille.
+                        Vos résultats, votre rendement, vos indicateurs de performances et vos indicateurs de risques
+                        sont calculés et restitués <b>net de frais</b>.
+                    </p>
+                    @Html.Partial("_returns")
+                </div>
+
+                <div id="nav-panel" class="py-5">
+                    <h3 class="display-3">Performances</h3>
+                    <p>
+                        La performance historique de votre portefeuille présentée ci-dessous
+                        est calculée selon la méthode TWR (en anglais <em>Time Weighted Returns</em>)
+                        et en prenant 100€ comme valeur initiale.
+                        Le calcul est insensible aux différents apports et retraits réalisés
+                        et permet de comparer notre proposition à un indice,
+                        un fonds ou un autre portefeuille.
+                    </p>
+
+                    <p>
+                        La performance annuelle de notre proposition est de <span class="indicator-item" data-indicator="yield"></span>
+                        par an depuis sa création hypothétique le @RoboHelper.StartDate.ToShortDateString().
+                    </p>
+
+                    <div class="py-5">
+                        <div class="lines-chart-container navs-container">
+                            <div id="navs" class="dc-chart lines-chart portfolio-content" data-option="3Y" data-animation="1000" data-x-dim="valuedate" data-y-dim="price"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="risk-panel" class="py-5">
+                    <h3 class="display-3">Risques</h3>
+                    <div class="py-5">
+                        <p>
+                            Ce portefeuille a été réalisé en tenant compte de votre appétence
+                            aux risques telle que nous l'avons comprise au travers de notre questionnaire
+                            de connaissance.
+                        </p>
+                        @Html.Partial("_risks")
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -157,25 +284,37 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-0 display-4">Rencontrons-nous!</h2>
-                <div class="p-2">
-                    <img class="w-25" src="@ApplicationHelper.UserImageUrl" />
-                </div>
-                <p class="mb-5">
-                    Vous souhaitez en savoir plus sur cette proposition?
-                    Contactez-moi via le formulaire ci-dessous. Je vous répondrai le plus vite possible!
-                    En attendant, pour valider cette prise de contact, vous recevrez un lien
-                    permettant de revoir cette proposition <u>actualisée</u>
-                    comme si vous étiez un de mes clients.
-                </p>
+                @if (ApplicationHelper.IsTemplate)
+                {
+                    <div class="py-3 w-100">
+                        <video controls="controls" class="w-100">
+                            <source src="~/Videos/Contact.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                }
+                else
+                {
+                    <div class="p-2">
+                        <img class="w-25" src="@ApplicationHelper.UserImageUrl" />
+                    </div>
+                    <p class="mb-5">
+                        Vous souhaitez en savoir plus sur cette proposition?
+                        Contactez-moi via le formulaire ci-dessous. Je vous répondrai le plus vite possible!
+                        En attendant, pour valider cette prise de contact, vous recevrez un lien
+                        permettant de revoir cette proposition <u>actualisée</u>
+                        comme si vous étiez un de mes clients.
+                    </p>
+                }
+
             </div>
         </div>
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
             <div class="col-lg-6">
                 <div class="py-3">
                     <form class="form-contact">
-                        <input type="hidden" id="portfolioquestionnaireid" name="questionnaireid" value="2031" />
+                        <input type="hidden" id="portfolioquestionnaireid" name="questionnaireid" value="@ApplicationHelper.LeadQuestionnaire" />
                         <input type="hidden" id="userid" name="userid" value="" />
-                        <input type="hidden" id="portfoliocode" name="code" value="" />
+                        <input type="hidden" id="portfoliocode" name="code" value="" class="portfoliocode" />
                         <!-- First name input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="firstname" name="firstname" type="text" placeholder="Entrez vos nom et prénom..." data-sb-validations="required" />
@@ -213,7 +352,6 @@
     </div>
 </section>
 
-
 <!-- Modal -->
 <div class="modal fade" id="warning" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -227,7 +365,8 @@
                     Cliquez sur le lien contenu dans le message afin que je puisse accéder et
                     analyser votre profil et votre demande.
                     Attention, ce lien de validation est actif uniquement pendant les 10 prochaines minutes.
-                    Passé ce délai, il faudra refaire votre questionnaire.</p><p>
+                    Passé ce délai, il faudra refaire votre questionnaire.
+                </p><p>
                     Dans l'attente d'échanger de vive voix sur votre projet, je vous souhaite
                     une excellente fin de journée.
                 </p>
@@ -240,9 +379,37 @@
     </div>
 </div>
 
+@if (VideoHelper.Starting)
+{
+    <!-- Modal disclaimer -->
+    <div class="modal fade" id="disclaimer-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white text-black">
+                <div class="modal-header">
+                    <h5 class="modal-title">Avant de commencer</h5>
+                </div>
+                <div class="modal-body">
+                    <video id="video-disclaimer" controls="controls" style="width:100%;height:auto;">
+                        <source src="~/Videos/Starting.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">J'ai compris</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
 @section scripts {
 
     <script>
+
+        LoyolApp.Settings.domain = '@ViewBag.Domain';
+        LoyolApp.Settings.questionnaire = @Model.QuestionnaireID;
+        LoyolApp.Settings.ManagementFees.rate = @ApplicationHelper.ManagementFeesRate;
+        LoyolApp.Settings.ManagementFees.period = @ApplicationHelper.ManagementFeesPeriod;
 
         var robo = [];
         var startfrom = function (i) {
@@ -251,7 +418,15 @@
 
         $(document).ready(function () {
 
-            LoyolApp.Settings.domain = '@ViewBag.Domain';
+            if (document.getElementById('disclaimer-modal')) {
+                // warning modal
+                var disclaimerModal = new bootstrap.Modal(document.getElementById('disclaimer-modal'), {
+                    keyboard: false
+                });
+
+                disclaimerModal.show();
+            }
+
             var domain = LoyolApp.Settings.domain;
             var sg = new LoyolApp.SignInController(domain);
             var $cus = new LoyolApp.CustomersController();
@@ -260,7 +435,9 @@
             var cred = { access_token: '@ViewBag.token', userGuid: 'xxx', userName: 'etfreporting', expires_in: @ViewBag.expires  }
             sg.setcredentials(cred, function () { });
 
-            robo = new myRobo(LoyolApp, @Model.QuestionnaireID, $('.container-question'));
+            // create a new robo controller
+            robo = new myRobo(LoyolApp, $('.container-question'));
+
             if ($.cookie('credentials-u')) {
                 robo.userid = $.cookie('credentials-u');
                 // verify here the client report
@@ -279,26 +456,48 @@
             window.addEventListener('terminate', function (e, questionnaire) {
                 $('.container-questionnaire').fadeOut(1000, function () {
                     robo.showAnswers($('.container-kyc table tbody'), function () {
-                        $('.container-kyc').fadeIn(1000);
+                        $('.container-kyc').fadeIn(1000, function () {
+                            $('#video-questionnaire').trigger('play');
+                        });
                     });
                 })
             });
 
             // When we submit for a creation of a portfolio
             $('.creation-form').submit(function () {
-                $('.section-start').addClass('visually-hidden');
+                $('#video-questionnaire').trigger('pause');
                 var params = $(this).serialize();
-                robo.create(params, '@ApplicationHelper.RoboStartDate', function (result) {
-                    $('.section-portfolio .portfolio-content').empty();
-                    $('.section-portfolio').removeClass('visually-hidden');
-                    $('.section-contact').removeClass('visually-hidden');
-                    $('#portfoliocode').val(result);
-                    robo.showProposal(function () {
-                        $('html, body').animate({
-                            scrollTop: $("#section-portfolio").offset().top
-                        }, 1000);
-                    });
+                //$('.section-start').addClass('visually-hidden');
+                $('.section-start').fadeOut(500, function () {
+                    $('#section-running').fadeIn(500, function () {
+                        robo.create(params, '@RoboHelper.StartDate.ToString("yyyy-MM-dd")', function (result) {
+                            $('#portfoliocode').val(result);
+                            $('#ref').text(result);
+                            $('html, body').animate({
+                                scrollTop: $("#section-portfolio").offset().top
+                            }, 1);
+                            $('.section-portfolio .portfolio-content').empty();
+                            $('.section-portfolio').removeClass('visually-hidden');
+                            $('.section-contact').removeClass('visually-hidden');
+                            $('#section-running').fadeOut(500, function () {
+                                robo.showProposal(function () {
+                                    $('#video-portfolio').trigger('play');
+                                    $('#video-portfolio').on('ended', function () {
+                                        $('html, body').animate({
+                                            scrollTop: $("#models-panel").offset().top - 100
+                                        }, 1000);
+                                    });
+                                    if (robo.sustainability == false)
+                                        $('#taxonomy-panel').addClass('visually-hidden');
+                                });
+                            })
+
+                        });
+
+                    })
+
                 });
+
                 return false;
             });
 
@@ -307,13 +506,14 @@
                 robo.start(function () {
                     $('.section-portfolio').addClass('visually-hidden');
                     $('.section-contact').addClass('visually-hidden');
-                    $('.section-start').removeClass('visually-hidden');
-                    $('.container-kyc').fadeOut(1000, function () {
-                        $('.container-questionnaire').show();
-                        $('.container-question').show();
-                        $('html, body').animate({
-                            scrollTop: $("#section-start").offset().top
-                        }, 1000);
+                    $('.container-kyc').fadeOut(500, function () {
+                        $('.section-start').fadeIn(500, function () {
+                            $('.container-questionnaire').show();
+                            $('.container-question').show();
+                            $('html, body').animate({
+                                scrollTop: $("#section-start").offset().top
+                            }, 1);
+                        })
                     });
                 })
            })

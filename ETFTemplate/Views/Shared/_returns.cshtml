@@ -1,0 +1,85 @@
+﻿
+    <div class="container-stats p-lg-5 p-sm-2 mb-auto">
+        <div class="text-center">
+            <h4>Rendement annuel</h4>
+            <h3 class="py-4" style="font-size:5rem;">
+                <span class="portfolio-irr"></span>
+            </h3>
+            <div class="row py-5">
+                <div class="col-md p-3">
+                    <h4>Montants</h4>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-synthesis">
+                            <tr>
+                                <td class="text-start"><label>Apports</label></td>
+                                <td class="text-end synthesis-item fw-bold" data-indicator="Capital"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>+/- réalisées</label></td>
+                                <td class="text-end synthesis-item" data-indicator="RealizedValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>+/- latentes</label></td>
+                                <td class="text-end synthesis-item" data-indicator="UnrealizedValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Dividendes</label></td>
+                                <td class="text-end synthesis-item" data-indicator="Incomes"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Valeur brute</label></td>
+                                <td class="text-end synthesis-item" data-indicator="GrossValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Valeur nette</label></td>
+                                <td class="text-end synthesis-item fw-bold" data-indicator="NetValue"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Dont notre rémunération</label></td>
+                                <td class="text-end synthesis-item" data-indicator="PortfolioManagementFees"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md p-3">
+                    <h4>Indicateurs</h4>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-synthesis">
+                            <tr>
+                                <td class="text-start"><label>Performance annuelle</label></td>
+                                <td class="text-end indicator-item fw-bold" data-indicator="yield"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Performance depuis le @RoboHelper.StartDate.ToShortDateString()</label></td>
+                                <td class="text-end indicator-item" data-indicator="netreturn"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Volatilité</label></td>
+                                <td class="text-end indicator-item" data-indicator="stddev"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Perte maximale</label></td>
+                                <td class="text-end indicator-item" data-indicator="maxdrawdown"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Value at Risk</label></td>
+                                <td class="text-end indicator-item" data-indicator="var95"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Ratio de Sharpe</label></td>
+                                <td class="text-end indicator-item" data-indicator="sharpe"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-start"><label>Frais de gestion</label></td>
+                                <td class="text-end">@((double)ApplicationHelper.ManagementFeesRate/100)%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+

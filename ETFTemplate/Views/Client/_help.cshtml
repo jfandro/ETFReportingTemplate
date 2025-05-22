@@ -3,32 +3,55 @@
 
 <div>
     <p>
-        Vous trouverez ici une présentation des différents modules et services proposés
-        dans le cadre de ce portail clients. Il est important de rappeler que
-        ce portail est un <b>modèle</b>,
-        son code étant proposé en <b>open source</b>
+        Vous trouverez ici une présentation des différents services proposés
+        dans le cadre de ce portail clients "témoin". Il est important de rappeler que
+        ce portail est proposé en <b>open source</b>
         ce qui donne à chaque professionnel
-        le droit de changer le style, le ton, le parcours utilisateur 
+        le droit de changer le contenu, le style, le ton, le parcours utilisateur, 
         le choix et l'organisation des briques fonctionnelles
         (<em>Widgets</em>)
         proposées. Le champs des possibles est immense en matière d'expériences client
-        avec une librairie de widgets composée de +50 éléments prêt à emploi et proposée elle
-        aussi en open source (D3.js)
-        Pour terminer, l'interface utilisateur proposée par défaut
-        s'appuie sur les librairies javascript, jquery et Bootstrap 5 afin de bénéficier des dernières
-        techniques pour une fluidité optimale. Ces langages ne sont pas imposés.
+        avec une librairie de widgets composée de +50 éléments prêt à emploi.
+        Avant de vous laisser parcourir les différents services proposés par défaut, 
+        rapplelons que l'interface utilisateur proposée par défaut
+        s'appuie sur les librairies HTML5, CSS3, javascript, jquery et Bootstrap 5 
+        afin de bénéficier des dernières
+        techniques pour une fluidité optimale. Ces librairies et ces langages ne sont pas imposés.
     </p>
 </div>
 
 <hr />
+<article>
+    <h3>Important</h3>
+    <p>
+        Ce portail client témoin est conçu pour restituer des informations sur un portefeuille
+        ou sur une agrégation de portefeuilles (dits participants)
+        permettant de consolider les avoirs d'une même personne physique ou morale, d'un même foyer ou
+        d'un même patrimoine (ex CTO1 + CTO2 + Assurance Vie + PEA).
+        Un portefeuille agrégé reprend l'activité passée des portefeuilles participants afin
+        de calculer correctement le rendement et les risques de ce portefeuille. Cet aspect
+        est important car il vous permet de définir, selon les besoins et profil du client, une stratégie à cheval sur 
+        plusieurs contrats ou enveloppes, les univers proposés étant complémentaires.
+    </p>
+    <p>
+        Enfin, tous les données présentées dans ces parcours s'appuient sur
+        des appels aux WebAPI sécurisées de la plateforme <a href="https://etfreporting.com">etfreporting.com</a>
+        Ces données collectés peuvent être restituées dans le cadre d'un tableau de bord
+        conçu par vos soins sur Power-BI Desktop et partagé en PDF ou sur le portail de Power-BI
+        comme cet <a target="_blank" href="https://app.powerbi.com/links/NqnuX-O1Ux?ctid=cd5434d5-a9b6-4935-888d-25a0b785d56d&pbi_source=linkShare">exemple</a>
+    </p>
+</article>
 
 <article>
     <h3>Au menu</h3>
     <p>
-        Le contenu de cet espace est organisé en 10 sections guidées par un menu latéral gauche.
+        Le contenu de cet portail client témoin est organisé en 11 sections guidées 
+        l'utilisateur navigant de l'un à l'autre via un menu latéral gauche classique.
+        La section Aide (celle où vous êtes en ce moment) est libre en terme de contenu.
         Chaque section porte sur un thème précis:
         <ul>
             <li><a href="#portfolio-help" class="">Portefeuille</a></li>
+            <li><a href="#taxonomy-help" class="">Taxonomie</a></li>
             <li><a href="#results-help" class="">Résultats</a></li>
             <li><a href="#strategy-help" class="">Stratégies</a></li>
             <li><a href="#kyc-help" class="">Connaissances client</a></li>
@@ -84,6 +107,57 @@
         <p>
             Enfin une matrice de correlations vient illustrer la <b>diversification</b>
             du portefeuille.
+        </p>
+    </article>
+</div>
+
+<div class="py-3 mx-5">
+    <article id="taxonomy-help">
+        <h3>Taxonomie et ESG</h3>
+        <p>
+            Dans cette section figurent les principales informations que vous souhaitez 
+            partager avec vos clients et prospects  
+            sur tous les aspects de <b>durabilité</b> de leurs investissements.
+        </p>
+        <p>
+            Toutes les données publiées dans cette section sont signées par vous (ou
+            un tiers mandaté) et engage votre responsabilité (ou celle du tiers) dans l'analyse qui en est faite.
+            Le contenu présenté est le résultat de votre
+            expertise qui se résume en collecte et 
+            compilation des informations traitées, qu'elles soient publiques ou publiées
+            par les sociétés de gestion (fichier EET), les agences de notations 
+            ou d'autres organismes privés engagés dans la finance responsable.
+        </p>
+        <p>
+            Collecte et compilation (ou scoring) des données extra financières 
+            sont soit gérées manuellement, soit intégrées dans le service
+            <b>Due Diligence</b> de la plateforme qui permet l'émission programmée
+            de questionnaires à destination des sociétés de gestion.
+        </p>
+        <p>
+            La conservation des données collectées et compilées s'appuie ensuite
+            sur un dispositif unique: <b>un modèle de données extensible</b> et multitenant.
+            L'extensibilité permet de conserver n'importe quelle information extra financière
+            dans le référentiel produits, de les intégrer dans vos questionnaires,
+            dans vos rapports ou dans le suivi de <a href="#compliances-help">vos contraintes de gestion</a> .
+        </p>
+        <p>
+            L'aspect <b>multi-tenant</b> quant à lui donne le pouvoir à chaque utilisateur professionnel 
+            de donner sa valeur à une même information extra financière,
+            valeur pouvant être différente (exemple avis (conserver/vendre), notation interne ...etc).
+            Précisons enfin que chaque valeur conervée peut être privée ou
+            publique et fait l'objet d'un traçage pour retrouver et justifier
+            une situation passée.
+        </p>
+        <p>
+            Dans ce portail témoin, nous avons mis en valeur les élements suivants:
+            <ul>
+                <li>La classification <b>SFDR</b> des supports sélectionnés;</li>
+                <li>Votre <b>avis</b> sur la politique de gestion durable;</li>
+                <li>L'impact sur <b>l'environnement</b> selon vos 6 axes;</li>
+                <li>Un radar confrontant les <b>exclusions</b> souhaitées par le client et celles que vous avez indentifié;</li>
+                <li>La <b>température</b> implicite du portefeuille pour voir l'alignement de ce dernier sur les accords de Paris;</li>
+            </ul>
         </p>
     </article>
 </div>

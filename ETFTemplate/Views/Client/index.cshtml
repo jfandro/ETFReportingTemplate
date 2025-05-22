@@ -17,7 +17,9 @@
 
 @section sidebar {
     <button data-bs-toggle="pill" data-bs-target="#tab-portfolio" role="tab" class="nav-link active text-white">Portefeuille</button>
+    <button data-bs-toggle="pill" data-bs-target="#tab-taxonomy" role="tab" class="nav-link text-white">Taxonomie</button>
     <button data-bs-toggle="pill" data-bs-target="#tab-indicators" role="tab" class="nav-link text-white">Résultats</button>
+    <button data-bs-toggle="pill" data-bs-target="#tab-risk" role="tab" class="nav-link text-white">Risques</button>
     <button data-bs-toggle="pill" data-bs-target="#tab-strategy" role="tab" class="nav-link text-white">Strategie</button>
     <hr />
     <button data-bs-toggle="pill" data-bs-target="#tab-kyc" role="tab" class="nav-link text-white">Connaissance</button>
@@ -105,7 +107,7 @@
             <div class="p-4 p-md-5 mb-4">
                 <h1 class="display-4">Activité opérationnelle</h1>
                 <p>
-                    Retrouvez ci-dessous toutes les opérations enregistrées
+                    Retrouvez dans le tableau ci-dessous toutes les opérations enregistrées
                     sur votre portefeuille. Sont présentes les opérations exécutées
                     et celles en cours d'exécution. S'agissant de ces dernières,
                     elles impacteront l'exposition et les liquidités de votre
@@ -130,7 +132,7 @@
             <div class="p-4 p-md-5 mb-4">
                 <h1 class="display-4">Situation de ma trésorerie</h1>
                 <p>
-                    Retrouvez ci-dessous tous les mouvements espèces enregistrés
+                    Retrouvez dans le tableau ci-dessous tous les mouvements espèces enregistrés
                     sur votre portefeuille. Sont présents les mouvements liés à vos opérations
                     d'investissement, vos apports et vos retraits, ainsi que les
                     montants de dividendes perçus au titre
@@ -159,10 +161,10 @@
                 <p>
                     Nous pouvons convenir ensemble d'une surveillance automatisée de votre portefeuille,
                     surveillance réalisée à un rythme régulier (quotidien, hebdomadaire, mensuel ...) ou à la demande.
-                    Cette surveillance se traduit par la mise en place d'un ensemble de contraintes
-                    de gestion, chaque contrainte étant portée par un règle programmable.
-                    Le tableau ci-dessous regroupe toutes les contraintes de gestion que vous avez souhaité
-                    voir appliquer sur votre portefeuille. Ensemble, jouons la transparence.
+                    Cette surveillance se traduit par la mise en place d'un ensemble de règles dites 
+                    <b>contraintes de gestion</b>, chaque contrainte ayant un objectif personnalisable.
+                    Le tableau ci-dessous regroupe toutes les contraintes de gestion attachée à ce portefeuille
+                    accompagnées du statut obtenu lors du dernier contrôle.
                 </p>
             </div>
 
@@ -183,7 +185,7 @@
             <div class="p-4 p-md-5 mb-4">
                 <h1 class="display-4">Notes et correspondances</h1>
                 <p>
-                    Retrouvez ici tous les échanges et autres correspondances avec votre conseiller
+                    Retrouvez ici tous les échanges avec votre conseiller
                     sur la gestion, la stratégie ou les risques de vos
                     placements dans le cadre de ce portefeuille.
                 </p>
@@ -248,6 +250,7 @@
                                 Retrouvez ci-dessous vos dernières réponses à notre
                                 questionnaire. Si une des réponses n'est plus d'actualité ou est
                                 à revoir, merci de procéder à sa mise à jour.
+                                La référence de votre dossier est <span class="portfolio-code"></span>
                             </p>
                             <div class="table-responsive">
                                 <table id="kyc" class="table table-hover">
@@ -274,9 +277,14 @@
             <div class="p-4 p-md-5 mb-4">
                 <h1 class="display-4">Carnet d'Ordres</h1>
                 <p>
-                    Votre intermédiaire vous donne les moyens techniques pour lui demander
-                    de passer un ordre. Veuillez saisir tous les ordres dans la partie gauche,
-                    puis de transférer le carnet ainsi rempli.
+                    Votre intermédiaire vous donne les moyens techniques pour 
+                    arbitrer votre portefeuille via le carnet d'ordres ci-dessous. 
+                    Veuillez saisir tous les arbitrages dans la partie gauche,
+                    puis de transférer le carnet d'ordre ainsi rempli.
+                    Avant d'être envoyés pour exécution, votre conseiller intermédiaire devra valider
+                    chacun de vos ordres afin de vérifier leur conformité.
+                    Pour votre information, votre capacité d'investissement
+                    est de <span class="container-liquidities"></span>.
                 </p>
                 @Html.Partial("_book")
             </div>
@@ -306,22 +314,37 @@
             </div>
         </div>
 
+        <div id="tab-taxonomy" role="tabpanel" tabindex="0" class="tab-pane fade active tab-svg">
+
+            <div class="p-4 p-md-5 mb-4">
+                <h1 class="display-4">Taxonomie</h1>
+                <p>
+                    Retrouvez ci-dessous toutes les informations utiles concernant
+                    l'impact de votre portefeuille en termes de durabilité.
+                </p>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="container py-5">
+                    <div class="mx-5">
+                        @Html.Partial("_taxonomy")
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="tab-indicators" role="tabpanel" tabindex="0" class="tab-pane fade active tab-svg">
 
             <div class="p-4 mb-4">
                 <h1 class="display-4">Résultats</h1>
                 <p>
-                    Retrouvez ci-dessous les principaux indicateurs
-                    de risques et de performances relevés sur
-                    votre portefeuille.
+                    Retrouvez dans cette section les informations importantes
+                    s'agissant des résultats relevés à ce jour sur votre portefeuille.
                 </p>
                 <div class="container py-5">
                     <div class="container-stats">
                         <div class="py-2 mx-lg-5 mx-sm-1">
                             @Html.Partial("_results")
-                        </div>
-                        <div class="py-2 mx-lg-5 mx-sm-1">
-                            @Html.Partial("_indicators")
                         </div>
                     </div>
                 </div>
@@ -329,6 +352,22 @@
 
         </div>
 
+        <div id="tab-risk" role="tabpanel" tabindex="0" class="tab-pane fade active tab-svg">
+
+            <div class="p-4 mb-4">
+                <h1 class="display-4">Risques</h1>
+                <p>
+                    Retrouvez dans cette section les informations importantes
+                    s'agissant des risques de votre portefeuille.
+                </p>
+                <div class="container py-5">
+                    <div class="py-2 mx-lg-5 mx-sm-1">
+                        @Html.Partial("_indicators")
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
@@ -358,13 +397,16 @@
 
         $(document).ready(function () {
 
+            // general settings
             LoyolApp.Settings.domain = '@ViewBag.Domain';
+            LoyolApp.Settings.questionnaire = @Model.QuestionnaireID;
+
             var domain = LoyolApp.Settings.domain;
             var sg = new LoyolApp.SignInController(domain);
             var pc = new LoyolApp.PortfolioController();
             var oc = new LoyolApp.OperationsController();
             var ac = new LoyolApp.AssetsController();
-            var robo = new myRobo(LoyolApp, @Model.QuestionnaireID, $('.container-question'));
+            var robo = new myRobo(LoyolApp, $('.container-question'));
 
             //var session = LoyolApp.Session.getInstance().get();
             var cred = { access_token: '@ViewBag.token', userGuid: 'xxx', userName: 'etfreporting', expires_in: @ViewBag.expires  }
@@ -452,7 +494,8 @@
                         $a.showPortfolioSynthesis('.synthesis-item');
                         $a.showOperations('.container-operations', true);
                         $a.showOperations('.container-pendings', false);
-                        $a.showTreasury();
+                        $a.showTreasury('.container-cashflows tbody');
+                        $a.showLiquidities('.container-liquidities');
                         $a.showDocuments();
                         $a.showDataviz(function () {
                             $a.showCompliances(true);
@@ -467,14 +510,17 @@
             })
 
             var showNotes = function (notes, container) {
-                $.each(notes, function (i, n) {
-                    var div = $('<article>').addClass('p-2 bg-light my-2');
-                    var h3 = $('<h3>').html(n.title);
-                    var h5 = $('<h5>').html(n.preamble);
-                    var p = $('<em>').html(n.body);
-                    div.append(h3, h5, p);
-                    div.appendTo(container);
-                })
+                if (notes) {
+                    $.each(notes, function (i, n) {
+                        var div = $('<article>').addClass('p-2 bg-light my-2');
+                        var h3 = $('<h3>').html(n.title);
+                        var h5 = $('<h5>').html(n.preamble);
+                        var p = $('<em>').html(n.body);
+                        div.append(h3, h5, p);
+                        div.appendTo(container);
+                    })
+                }
+
             }
 
             $('#status').on('change', function () {
@@ -535,7 +581,8 @@
                         $('<td>').html(additem(pref, 'Units', r.Units)),
                         $('<td>').html(additem(pref, 'Price', r.Price)),
                         $('<td>').html(additem(pref, 'Ccy', r.Ccy)),
-                        $('<td>').html(additem(pref, 'ProgramCode', r.ProgramCode == null ? '' : r.ProgramCode))
+                        $('<td>').html(additem(pref, 'ProgramCode', r.ProgramCode == null ? '' : r.ProgramCode)),
+                        $('<td>').html(additem(pref, 'Comment', r.Comment))
                     );
                     tr.attr('id', 'row-' + i);
                     tr.appendTo(tb);
@@ -554,6 +601,14 @@
                 return false;
             })
 
+            // to refresh pendings table
+            var afterOrder = function (code) {
+                var $a = robo.appContainers;
+                $a.code = code;
+                $a.showOperations('.container-pendings', false);
+                $a.showLiquidities('.container-liquidities');
+            }
+
             $('form.upload-book').submit(function () {
                 $('.message').removeClass('fade');
                 var $fro = $(this);
@@ -566,7 +621,7 @@
                     if (result.Success) {
                         records = []; // empty the array of records
                         $('#evaluations').empty(); // and the display list
-                        getPendings(result.Code) // refresh the table of pending operations
+                        afterOrder(result.Code) // refresh the table of pending operations
                     }
                     else {
                         $('.form-container').show();

@@ -10,6 +10,7 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Enexis|Any CPU = Enexis|Any CPU
 		JBS|Any CPU = JBS|Any CPU
+		MCA|Any CPU = MCA|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
@@ -19,6 +20,8 @@ Global
 		{897832CD-39CC-40D2-A466-D314C6B7247F}.Enexis|Any CPU.Build.0 = Enexis|Any CPU
 		{897832CD-39CC-40D2-A466-D314C6B7247F}.JBS|Any CPU.ActiveCfg = JBS|Any CPU
 		{897832CD-39CC-40D2-A466-D314C6B7247F}.JBS|Any CPU.Build.0 = JBS|Any CPU
+		{897832CD-39CC-40D2-A466-D314C6B7247F}.MCA|Any CPU.ActiveCfg = MCA|Any CPU
+		{897832CD-39CC-40D2-A466-D314C6B7247F}.MCA|Any CPU.Build.0 = MCA|Any CPU
 		{897832CD-39CC-40D2-A466-D314C6B7247F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{897832CD-39CC-40D2-A466-D314C6B7247F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

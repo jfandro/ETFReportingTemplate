@@ -14,8 +14,8 @@ namespace ETFTemplate.Controllers
 {
     public class LeadController : ApplicationController
     {
-        private readonly int questionnaireid = ApplicationHelper.LeadQuestionnaire;
-        private readonly string issuer = ApplicationHelper.ContactEmail;
+        private readonly int questionnaireid = RoboHelper.Questionnaire;
+        private readonly string issuer = RoboHelper.ContactEmail;
         private readonly string domain = ApplicationHelper.ServicesUrl;
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace ETFTemplate.Controllers
             ViewBag.token = tokenDetails["access_token"];
             ViewBag.expires = tokenDetails["expires_in"];
             ViewBag.Domain = domain;
-            ViewBag.Title = ApplicationHelper.ApplicationName + " - Robot Conseiller";
+            ViewBag.Title = ApplicationHelper.ApplicationName + "-" + RoboHelper.Name;
 
             return View(new LeadConnection() { QuestionnaireID = questionnaireid });
         }

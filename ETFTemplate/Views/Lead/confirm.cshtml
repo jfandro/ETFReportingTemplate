@@ -15,46 +15,57 @@
 <section class="page-section w-100 h-100">
 
     <div class="p-4 p-md-5 mb-4">
-        <h1 class="display-4">C'est noté <span class="text-username"></span>!</h1>
-        <div class="p-2">
+        <h1 class="display-4">Bienvenue <span class="text-username"></span>!</h1>
+        @if (ApplicationHelper.IsTemplate)
+        {
+            <div class="py-3 w-100">
+                <video controls autoplay class="w-100">
+                    <source id="video-espace" src="~/Videos/Espace.mp4" type="video/mp4" />
+                </video>
+            </div>
+        }
 
-            <h2>Je vous recontacte au plus vite!</h2>
-            <p>
-                D'ici là, j'aurais examiné votre profil, vos attentes et votre projet.
-                La proposition financière conçue automatiquement sur la base de vos réponses
-                porte la référence <b>@Model.Code</b>. Conservez-la précieusement.
-                D'ici là, vous pouvez
-                consulter notre proposition dans votre espace personnel comme si celle-ci
-                avait été initiée il y a 3 ans pour bien comprendre les performances, les expositions
-                et les risques proposés.
-            </p>
-            <p class="text-center py-4">
-                <a type="button" class="btn btn-dark" href="/Client/Index?id=@Model.Code">Accéder à ma proposition</a>
-            </p>
-            <p>
-                Bien évidemment, nous reverrons ensemble et en détail
-                cette proposition (enveloppe, niveau de risque ou actifs sélectionnés)
-                qui pourra faire l'objet d'ajustements ou de changements en regard de
-                ce que vous me direz de vive voix.
-                Je vous contacte d'ici 24 heures. D'ici là, je vous
-                envoie un email à <b>@Model.Email</b> récapitulant votre profil et votre projet.
-            </p>
-            <p>Je vous souhaite une excellente journée,</p>
-            <hr />
-        </div>
-        <div class="p-2">
-            <img class="w-25" src="@ApplicationHelper.UserImageUrl" />
-        </div>
-        <h4>@ApplicationHelper.UserSignature</h4>
-        <em>@ApplicationHelper.UserSignature2</em>
-        <p>email <a href="mailto:@ApplicationHelper.UserEmail">@ApplicationHelper.UserEmail</a></p>
-        <p><span class="fa fa-phone"></span> @ApplicationHelper.UserPhoneNumber</p>
+            <div class="p-2">
+                <h2>Je vous recontacte au plus vite!</h2>
+                <p>
+                    D'ici là, j'aurais pris le temps d'examiner votre profil, vos attentes et votre projet.
+                    La proposition financière conçue automatiquement sur la base de vos réponses
+                    porte la référence <b>@Model.Code</b>. Conservez-la précieusement.
+                    D'ici là, vous pouvez
+                    consulter notre proposition dans votre espace personnel comme si celle-ci
+                    avait été initiée il y a 3 ans pour bien comprendre les performances, les risques,
+                    les expositions et les impacts durables (le cas échéant) proposés.
+                </p>
+                <p class="text-center py-4">
+                    <a type="button" class="btn btn-dark" href="/Client/Index?id=@Model.Code">Accéder à mon espace</a>
+                </p>
+                <p>
+                    Bien évidemment, nous reverrons ensemble et en détails
+                    cette proposition (enveloppe, niveau de risque ou actifs sélectionnés)
+                    qui pourra faire l'objet d'ajustements ou de changements en regard de
+                    ce que vous me direz de vive voix.
+                    Je vous contacte dans les prochaines heures. D'ici là, je vous
+                    envoie un email à <b>@Model.Email</b> récapitulant votre profil et votre projet.
+                </p>
+                <p>Je vous souhaite une excellente journée,</p>
+                <hr />
+            </div>
+            <div class="p-2">
+                <img class="w-25" src="@ApplicationHelper.UserImageUrl" />
+            </div>
+            <h4>@ApplicationHelper.UserSignature</h4>
+            <em>@ApplicationHelper.UserSignature2</em>
+            <p>email <a href="mailto:@ApplicationHelper.UserEmail">@ApplicationHelper.UserEmail</a></p>
+            <p><span class="fa fa-phone"></span> @ApplicationHelper.UserPhoneNumber</p>
+        
     </div>
 </section>
 
 @section scripts {
 
     <script>
+
+        $('#video-espace').trigger('play');
 
         $(document).ready(function () {
 

@@ -1,0 +1,33 @@
+﻿
+<p>
+    Chaque jauge ci-dessous vous indique un niveau de risques de votre portefeuille
+    calculé depuis la création de ce dernier
+    et selon 4 indicateurs standards.
+    <ul>
+        <li>La <b>volatilité</b> vous donnera le niveau d'amplitude des rendements hebdomadaires;</li>
+        <li>Le ratio <b> de Sharpe</b> vous donnera le ratio Rendement/Volatilité (matrise du risque);</li>
+        <li>Le <b>max drawdown</b> vous donnera la perte maximale constatée sur la période;</li>
+        <li>La <b>VaR95</b> ou (Value at Risk) vous donnera la perte maximale sur un jour avec une probabilité de 95%</li>
+    </ul>
+    Faites-en bon usage par la suite et comparez les avec d'autres instruments financiers ou portefeuilles.
+</p>
+<div class="py-3" style="min-height:350px;">
+    <div id="kpi-container" class="gauges-kpi-container p-md-5 p-sm-1" data-option="STD">
+        <div class="row">
+            <div class="col gauge-container">
+                <div id="volatility-gauge" class="gauge gauge-volatility" data-kpi="stddev" data-value="" data-srri="5" data-min-value="0" data-max-value="40"></div>
+            </div>
+            <div class="col gauge-container">
+                <div id="sharpe-gauge" class="gauge gauge-sharpe" data-kpi="sharpe" data-value="" data-min-value="0" data-max-value="3"></div>
+            </div>
+            <div class="col gauge-container">
+                <div id="drawdown-gauge" class="gauge gauge-drawdown" data-kpi="maxdrawdown" data-value="" data-min-value="0" data-max-value="50"></div>
+            </div>
+            <div class="col gauge-container">
+                <div id="var-gauge" class="gauge gauge-var" data-kpi="var95" data-value="" data-min-value="0" data-max-value="10"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

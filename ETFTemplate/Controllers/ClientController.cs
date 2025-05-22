@@ -14,7 +14,7 @@ namespace ETFTemplate.Controllers
     /// </summary>
     public class ClientController : ApplicationController
     {
-        private readonly int questionnaireid = ApplicationHelper.LeadQuestionnaire;
+        private readonly int questionnaireid = RoboHelper.Questionnaire;
         private readonly string domain = ApplicationHelper.ServicesUrl;
 
         /// <summary>

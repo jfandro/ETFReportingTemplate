@@ -9,116 +9,466 @@
     </ul>
 }
 
-<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-light">
-    <h1 class="display-1 fw-bolder">ETFReporting <span class="fst-italic text-primary">Premium</span></h1>
-    <h3 class="fs-3 py-4">
-        1 PMS + 1 Portail + 1 Robot<br />
-        = 3 applications personnalisées<br />
-        déployées en 24H chrono sur votre site internet
-    </h3>
+@section cover {
+    <div class="w-100 h-100 bg-black">
+        <div class="cover-container d-flex h-100 flex-column">
+            <div class="px-3 m-auto w-75">
+                <h2 class="display-3 text-white">
+                    ETFreporting <em class="text-primary">Premium</em><br />
+                </h2>
+                <h3 class="display-6 text-white-75">
+                    Portail pour l'acquisition et la gestion
+                    d'investisseurs <span class="text-primary">ETF</span> exigeants.
+                </h3>
+                <a class="btn btn-primary" href="#mission">En savoir plus</a>
+            </div>
+        </div>
+    </div>
 
-    <em><b>PMS</b> = Portfolio Management Services</em>
-</div>
-
+}
 
 <div class="mx-lg-4 p-lg-5">
 
-    <blockquote class="blockquote bg-light p-5 border-start border-5 py-5">
-
+    <div id="mission" class="py-5" style="min-height:100vh;">
+        <h2 class="display-2">Notre mission</h2>
         <p>
-            ETFreporting <em class="text-primary">Premium</em> est d'abord
-            la première <b>offre SaaS</b> proposée aux conseillers
-            en gestion de patrimoine (CGP) pour se doter à moindres coûts d'un arsenal digital conçu
-            pour l'acquisition, la gestion et la relation client.
+            ETFReporting <em class="text-primary">Premium</em> est
+            la première offre SaaS conçue
+            pour les conseillers en gestion de patrimoine (CGP)
+            et les conseillers en investissements financiers (CIF)
+            afin qu'ils se dotent d'un arsenal digital complet
+            pour affronter et surfer sur la vague ETF.
         </p>
         <p>
-            Mais c'est aussi la première offre complète de gestion de portefeuilles
-            conçue pour l'<b>investissement via des ETF</b>.
-            L'adoption massive des fonds cotés en bourse (gestion passive et active) changent la donne
-            non seulement dans la gestion financière d'un portefeuille,
-            mais aussi dans la manière de restituer impacts et résultats auprès de ses clients
-            réclamant performance, transparence et flexibilité.
+            Plus performants (car moins chers),
+            plus flexibles (car côtés en bourse)
+            et plus transparents (car composition détaillée),
+            l'adoption massive des ETF (<em>Exchanged Traded Funds</em> ou fonds cotés)
+            par les institutionnels comme par les particuliers
+            change la donne en profondeur pour les professionnels du conseil,
+            et notamment sur les deux points suivants:
+            <ul>
+                <li>
+                    Le modèle de rémunération est compromis faute de
+                    de rétro commissions versées
+                    par les sociétés de gestion;
+                </li>
+                <li>
+                    Le modèle de distribution est lui aussi compromis
+                    puisque les investisseurs en ETF privilégient
+                    les plateformes digitales pour la gestion de leurs portefeuilles.
+                </li>
+            </ul>
         </p>
         <p>
-            Tous nos services intégrés dans une seule et unique offre vont vous accompagner dans 
-            la connaissance client, la construction et la gestion de vos allocations, 
-            la maitrise des risques, l'intégration des critères ESG, 
-            le calcul de votre rémunération en format frais de gestion.
+            Pour autant, si on veut bien se pencher sur les nouveaux comportements
+            des particuliers, de nombreuses opportunités
+            se présentent aux professionnels du conseil qui peuvent jouer un rôle important
+            dans les prochaines années. Leurs efforts doivent selon nous
+            se concentrer sur les deux priorités suivantes:
+            <ul>
+                <li>
+                    Conduire une <b>stratégie digitale</b> permettant de s'adresser aux clients (portail)
+                    et aux prospects (robot conseiller);
+                </li>
+                <li>
+                    Faire valoir leurs expertises dans la gestion de portefeuilles
+                    et en particulier dans la maîtrise des risques via des allocations profilées ou thématiques;
+                </li>
+            </ul>
         </p>
         <p>
-            Notre proposition est simple : vous accompagner pour attirer et gagner la confiance des nouveaux investisseurs.
+            Avant d'aborder en détail la liste des <a href="#applications">applications</a> proposées
+            dans l'offre au 31 décembre 2024, voyons la liste de nos différents
+            <a href="#services">services</a> qui font sa singularité.
         </p>
-        
+    </div>
 
-    </blockquote>
 
-    <h4 class="fs-4">
-        Vous rêvez d'un portail clients?
-    </h4>
-    <p>
-        Cette offre s'adresse aux CGP convaincus de la nécessité d'intégrer des ETF dans
-        les portefeuilles de ses clients et dans les propositions faites à ceux qui restent
-        au stade du prospect.
+    <div id="services" class="py-5">
+        <h2 class="display-2">Nos services</h2>
+        <div>
+            <p>
+                Avant d'aborder en détail la liste des <a href="#applications">applications</a> proposées
+                dans l'offre au 31 décembre 2024, voyons la liste des services transversaux consommées par
+                celles-ci:
+            </p>
+            <div class="table-responsive p-4">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Gestion</h6>
+                            </td>
+                            <td>
+                                Tous les portefeuilles traités par nos services sont gérés
+                                comme s'il s'agissait d'OPCVM. Séparation de l'actif (investissements, dividendes)
+                                et du passif (apports/retraits),
+                                provisionnement de frais de gestion additionnels (les vôtres)
+                                ou calcul d'une valeur liquidative sont les pré-requis à tous les
+                                calculs d'indicateurs de risques et de performances.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h6 class="fw-bold">Agrégation</h6></td>
+                            <td>
+                                L'agrégation de portefeuilles est un service de plus en plus important
+                                compte tenu du nombre de compte titres et de contrats détenus
+                                par une personne physique, une personne morale ou un foyer.
+                                Contrairement aux autres plateformes,
+                                un portefeuille agrégé sur etfreporting reprend
+                                les activités historiques des portefeuilles participants
+                                pour calculer un niveau de risques et de rendement
+                                correct.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h6 class="fw-bold">Comparaison</h6></td>
+                            <td>
+                                Qu'il s'agissent d'instruments côtés, de vos portefeuilles modèle et client,
+                                nos services calculent nativement les principaux indicateurs de risques
+                                et de performances selon les normes internationales en vigueur,
+                                à partir des cotations de marchés et des valeurs liquidatives obtenues.
+                                Vous serez ainsi en capacité de chercher (<em>screener</em>),
+                                de comparer, de calculer ou d'optimiser
+                                vos propositions financières.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Simulation</h6>
+                            </td>
+                            <td>
+                                Vous disposez d'un pack unique de services
+                                destiné à vous accompagner dans la construction et le pilotage des portefeuilles
+                                de vos clients. Citons en particulier: backtest, conversion de portefeuilles, optimisation d'allocations
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Modélisation</h6>
+                            </td>
+                            <td>
+                                Incontourbables outre atlantique, les portefeuilles modèles investis en ETF
+                                permettent aux conseillers financers d'industrialiser
+                                les phases de construction, de gestion et de compréhension des portefeuilles.
+                                Ils font gagner un temps important précieux (et donc de l'argent)
+                                tout en mettant en valeur votre expertise d'allocataire.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Conversion</h6>
+                            </td>
+                            <td>
+                                Convertir les positions courantes d'un portefeuille existant en équivalent ETF (totalement ou partiellement)
+                                est un service dont la valeur n'a pas de prix dans le processus d'acquisition
+                                d'un nouveau client.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Optimisation</h6>
+                            </td>
+                            <td>
+                                Atteindre un objectif de rendement sans quitter un cadre de risques
+                                est un exercice compliqué. En complément du service de rebalancement,
+                                vous disposez d'un service d'optimisation qui vous donnera sur la base
+                                des comportement et des correlaions passées, les
+                                pondérations à retenir dans votre portefeuile une fois sélectionnés vos ETF.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Rémunération</h6>
+                            </td>
+                            <td>
+                                Les portefeuilles gérés sur cette plateforme
+                                étant abordés comme des OPCVM, vous êtes en mesure d'intégrer
+                                le calcul, le provisionnement et le réglement de frais de gestion.
+                                Si les honoraires ne vous font pas peur,
+                                ces frais contribueront sensiblement à votre rémunération.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Contraintes</h6>
+                            </td>
+                            <td>
+                                A l'instar des sociétés de gestion, vous pourrez mettre en place
+                                avec chaque client un jeu de règles de gestion qui veilleront chacune à ce
+                                que le portefeuille suivi reste dans un cadre défini et convenu
+                                préalablement avec vos clients : perte maximale, rendement, exclusions, white-lists ...
+                                Des règles exécutées à la volée ou programmées (quotidienne, mensuelle)
+                                qui avertiront vous et votre client en cas de non respect.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Rebalancement</h6>
+                            </td>
+                            <td>
+                                Le rebalancement d'un portefeuille est un service indispensable
+                                si on veut garder la pleine maîtrise de ses portefeuilles.
+                                Soit de façon systématique (par exemple à date anniversaire),
+                                par non respect d'une contrainte (exemple dès que la perte
+                                maximale dépasse 20% ou dès que la poche actions dépasse les 60%).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Tendances</h6>
+                            </td>
+                            <td>
+                                Vous serez tenté d'écouter les marchés via les ETF à gestion passive
+                                pour détecter le cas échéant des changements de tendances.
+                                Ce n'est pas une obligation mais si on veut capter du rendement
+                                c'est une option à ne pas négliger.
+                                Nos services calculent quotidiennement les principaux indicateurs techniques
+                                comme les moyennes mobiles, les indices de force relative ou les indicateurs
+                                de type momentum.
+                                Tout portefeuille peut être programmé pour écouter ces signaux de marchés,
+                                pour avertir vous et son propriétaire
+                                et déclencher manuellement ou automatiquement
+                                les arbitrages et autres rotations requises.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Diligences</h6>
+                            </td>
+                            <td>
+                                Un disposif et un process de diligences vous permettra
+                                de collecter des informations structurées et typées auprès
+                                des sociétés de gestion (données extra financières)
+                                comme des particuliers (connaissance clients) afin de
+                                répondre à vos obligations réglementaires.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 class="fw-bold">Extensions</h6>
+                            </td>
+                            <td>
+                                Une large partie des référentiels partagés (Produits et Emetteurs entre autres)
+                                sera commune à tous les utilisateurs de nos services.
+                                C'est le cas, en particulier, de toutes les données financières.
+                                L'autre partie de ces référentiels sera multi-tenante permettant
+                                à chaque utilisateur de conserver ses données dites "extra financières".
+                                Ces extensions d'informations privées pourront provenir d'une saisie manuelle ou d'un fichier émis
+                                par un source externe. Elles seront exploitées et rapportées dans le
+                                cadre de vos obligations d'informations sur le chapitre finance durable.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        Pour capter et conserver l'attention d'investisseurs avertis ou non sur le potentiel des ETF,
-        il vous manque une technologie capable
-        d'afficher au plus grand nombre votre expertise en matière d'allocation d'actifs,
-        de quête de rendements et de maîtrise des risques.
+            </div>
+        </div>
+    </div>
 
-        Une technologie moderne, économique, fluide et flexible pour promouvoir
-        ce savoir-faire recherché à vos couleurs, dans votre environnement et sur les réseaux sociaux.
-    </p>
+    <div id="applications" class="py-5">
+        <h2 class="display-2">
+            Nos applications
+        </h2>
+        <div class="table-responsive p-4">
+            <p>
+                Les applications énumérées ci-dessous sont accessibles
+                à toute personne disposant d'une licence professionnelle
+                souscrite sur le site <a href="https://etfreporting.com">https://etfreporting.com</a>.
+            </p>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="align-content-center">
+                            <h6 class="fw-bold">Votre atelier</h6>
+                        </td>
+                        <td>
+                            <p>
+                                Votre atelier est sur le site <a href="https://etfreporting.com">https://etfreporting.com</a>
+                                C'est dans cet espace privé et sécurisé que vous allez construire et maintenir
+                                <ul>
+                                    <li>vos allocations modèles</li>
+                                    <li>vos barèmes de frais</li>
+                                    <li>vos contraintes de gestion</li>
+                                    <li>vos règles de rebalancement</li>
+                                    <li>vos questionnaires</li>
+                                    <li>vos données extra financières (extension du modèle de données commun)</li>
+                                    <li>vos diligences</li>
+                                    <li>votre blog</li>
+                                    <li>...</li>
+                                </ul>
+                            </p>
+                            <p>
+                                C'est dans votre atelier que vos dossiers clients seront
+                                conservés. Un dossier couvre soit:
+                                <ul>
+                                    <li>Un portefeuille client</li>
+                                    <li>Un agrégat de portefeuilles client (patrimoine consolidé)</li>
+                                    <li>Une proposition à un prospect</li>
+                                </ul>
+                            </p>
+                            <p>
+                                C'est aussi à partir de votre atelier que vous allez pouvoir diffuser
+                                et communiquer sur vos allocations modèles auprès d'un public large
+                                ou ciblé. Vous aurez pour cela des passerelles permettant de diffuser
+                                votre contenu sur des supports physiques (off-line) ou digitaux (réseaux sociaux).
+                                Chaque lecture pourra être tracée.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-content-center">
+                            <h6 class="fw-bold" id="portal">Votre portail client</h6>
+                        </td>
+                        <td>
+                            <p>
+                                Un portail client est le premier pilier d'une Web Application ASP.NET/MVC5 statique déployée dans
+                                votre environnenement identifié par un nom de domaine (ou sous domaine),
+                                un certificat de sécrutié et un prestataire hébergeur.
+                                Chaque conseiller peut disposer d'un ou plusieurs portails selon ses
+                                besoins (exemple: un portail par type d'enveloppe ou partenaire assureur)
+                                Chaque portail est la copie d'une application modèle (approche open Source)
+                                préalablement téléchargée, configurée, réorganisée et personnalisée
+                                pour coller aux besoins et spécificités du client.
+                            </p>
+                            <p>
+                                Chaque portail est associé à un seul compte utilisateur (donc un seul atelier).
+                                Cette configuration établit une connexion sécurisée
+                                avec l'espace de travail et le référentiel commun partagé avec les
+                                autres utilisateurs.
+                            </p>
+                            <p><a href="/ClientPortal">Accéder au portail client témoin</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h6 class="fw-bold" id="roboadvisor">Votre robo advisor</h6>
+                        </td>
+                        <td>
+                            <p>
+                                Avec le portail Client, le RoboAdvisor est l'autre pilier de la Web Application,
+                                dont la mission est l'acquisition de nouveaux clients.
+                                Totalement intégré et bénéficiant de la même configuation,
+                                vous recommandons à nos conseillers professionels le déploiement
+                                des deux piliers.
+                            </p>
+                            <p>
+                                Les ingrédiants requis pour concevoir votre automate conseiller sont au nombre de 3:
+                                <ul>
+                                    <li>Un questionnaire de connaissance (privé ou public);</li>
+                                    <li>Une librairie de portefeuilles modèles;</li>
+                                    <li>Un script de scoring;</li>
+                                </ul>
+                            </p>
+                            <p>
+                                Vous pouvez construire jusqu'à 10 questionnaires,
+                                un questionnaire par type de produit ou par partenaire assureur par exemple.
+                            </p>
+                            <p>
+                                Votre librairie de portefeuilles modèles peut contenir autant
+                                d'éléments que vous le désirez. Nous recommandons une approche par
+                                poche (exemple Actions Euro, Actions internationales, Obligations, Obligations ISR ...)
+                                et par univers de contrat.
+                                Plus leur nombre sera important, plus le script de scoring sera complexe.
+                            </p>
+                            <p>
+                                Une des particularités importantes de notre approche est 
+                                de ne pas restreindre
+                                l'univers d'investissement d'une proposition à celui d'un contrat.
+                                Ainsi, en fonction des besoins exprimés par vos clients,
+                                le robot peut concevoir un portefeuille agrégé consolidant
+                                des positions détenues sur plusieurs enveloppes, 
+                                sur plusieurs comptes titres ou chez plusieurs assureurs.
+                            </p>
+                            <p><a href="/Robot">Accéder au robot conseiller témoin</a></p>
 
-    <h4 class="fs-4">Pourquoi le choix de l'Opensource</h4>
-    <p>
-        La proposition que nous vous faisons est le fruit de +30 années d'expérience d'éditeur 
-        avec des solutions logiciels destinées aux sociétés de gestion et institutionnels.
-        L'ADN de cette nouvelle offre destinée aux CGP se résume en une phrase : séparer gestion et restitution.
-    <p>
-    <p>
-        nos services de gestion de portefeuilles accessibles en WebAPI et référencés
-        sur <a href="https://etfreporting.com">etfreporting.com</a>.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-        Pour réaliser un modèle de vos futurs parcours (prospects et clients),
-        nous nous sommes inscrits dans une approche <em class="text-primary">open source</em>.
+        </div>
 
-        Adopter une approche <em class="text-primary">open source</em> signifie que notre savoir-faire est concentré
-        sur les services métiers.
+    </div>
 
-        <em class="text-primary">Open source</em> indique que vous décidez d'une part comment vous consommez ces services métiers,
-        de l'autre, comment vous restituez l'information utile produite.
+    <div id="technologies" class="py-5">
+        <h2 class="display-2">
+            Notre technologie
+        </h2>
+        <p>
+            La proposition de services et d'applications que nous formulons ici est le fruit de +30 années d'expérience d'éditeur
+            avec des solutions logiciels destinées aux sociétés de gestion et institutionnels.
+            Cette nouvelle offre est destinée aux conseillers en
+            gestion de patrimoine et aux conseillers en investisement financier
+        </p>
+        <blockquote class="blockquote py-5 col-4 mx-auto">
+            "Avec des services de gestion de portefeuilles accessibles en WebAPI,
+            vous vous concentrez sur la restitution des résultats qui
+            capteront l'attention de vos clients"
+        </blockquote>
 
-        <em class="text-primary">Open source</em> précise enfin que le code de cette application modèle est public
-        et disponible sur <a href="https://github.com/jfandro/ETF-Template/tree/master">Github</a>.
-        Ce code est destiné à ceux qui veulent dessiner leur propre parcours et expérience client
-        à partir de notre application modèle. Unique.
+        <p>
+            Référencées sur <a href="https://etfreporting.com">etfreporting.com</a>,
+            nos WebAPI vous libèrent de tout ce qui est du "calculatoire".
+            Vous décidez d'un côté, quand et comment vous consommez ces services métiers,
+            de l'autre, comment vous restituez l'information utile pour vos clients.
+        </p>
 
-    </p>
-    <h4 class="fs-4">Bénéfices attendus</h4>
-    <p>
-        L'Opensource a de nombreuses vertues, la première étant <b>économique</b> car vous ne démarrez pas un projet d'une page blanche,
-        mais à partir d'un modèle couvrant l'essentiel de vos besoins.
-        La seconde vertue est <b>technologique</b>.
-        A nous éditeur français, elle permet de concentrer nos efforts sur le calculatoire, c'est à dire
-        le développement et la maintenance de tous les services centrés sur la gestion de portefeuilles.
+        <blockquote class="blockquote py-5 col-4 mx-auto">
+            "L'Opensource, c'est le pouvoir de garder la totale maîtrise des parcours de vos clients"
+        </blockquote>
 
-        Enfin, la troisième vertue est  <b>pratique</b> car l'Opensource vous donne une licence libre
-        sur une application prête à réplication et mise en production en moins de 24 heures.
-        Vous gardez le pouvoir de choisir l'information utile, et de la restituer de la manière qui vous plaira, auprès de qui vous voulez, et comme vous le souhaitez.
-        Sur ce dernier point, vos équipes ou vos prestataires techniques
-        pourront s'appuyer sur notre librarie de datavisualisation (elle aussi disponible en open source)
-        ou sur une application plus standard comme Power BI.
-        Les rôles sont clairs, et ce, au bénéfice de chacun.
-    </p>
-    <h4 class="fs-4">L'union fait la force</h4>
-    <p>
-        Cette application peut être aussi le portail unique
-        d'un regroupement de plusieurs cabinets. Tout prospect peut
-        etre routé vers le
-        Un seul site pour prospecter.
-    </p>
-    <p>
-        <strong>Bienvenue dans l'univers des ETF et de l'Open source</strong>
-    </p>
+        <p>
+            L'Opensource a de nombreuses vertues, la première étant <b>économique</b> car vous ne démarrez pas
+            un projet de portail ou de robot à partir d'une page blanche,
+            mais à partir d'un modèle couvrant l'essentiel de vos besoins.
+            La seconde vertue est <b>technologique</b>.
+            Vous bénéficiez de notre savoir faire et de nos travaux de recherche pour
+            coller aux
+            A nous éditeur français, elle permet de concentrer nos efforts sur le calculatoire, c'est à dire
+            le développement et la maintenance de tous les services centrés sur la gestion de portefeuilles.
+
+            Enfin, la troisième vertue est  <b>pratique</b> car l'Opensource vous donne une licence libre
+            sur une application prête à réplication et mise en production en moins de 24 heures.
+            Vous gardez le pouvoir de choisir l'information utile, et de la restituer de la manière qui vous plaira, auprès de qui vous voulez, et comme vous le souhaitez.
+            Sur ce dernier point, vos équipes ou vos prestataires techniques
+            pourront s'appuyer sur notre librarie de datavisualisation (elle aussi disponible en open source)
+            ou sur une application plus standard comme Power BI.
+            Les rôles sont clairs, et ce, au bénéfice de chacun.
+        </p>
+        <p>
+            Le code de cette application modèle est public
+            et disponible sur <a href="https://github.com/jfandro/ETF-Template/tree/master">Github</a>.
+        </p>
+
+    </div>
+
+
+    <div id="map" class="py-5">
+        <h2 class="display-2">
+            Notre architecture
+        </h2>
+        <p>
+            L'architecture innovante permet à nos clients de rester maître 
+            dans la restitution des informations auprès de leurs clients.
+            Cette architecture "Opene" permet aussi d'alimenter leurs propres
+            applications et bases de données si celles-ci disposent de connecteurs ouverts aux WebAPI.
+            C'est en particulier le cas si vous utilisez des applications comme PowerBI Desktop
+            ou Excel pour produire des tableaux de bord et des rapports modernes
+            destinés à une clientèle exigeante en matière de restitution
+            claires et précises sur leurs placements.
+        </p>
+        <p>
+            
+        </p>
+        <p>
+            Nous pouvons vous accompagner dans vos projets d'intégration ou 
+            dans la création de documents et de tableaux de bord sur mesure.
+        </p>
+        <div class="m-auto w-75">
+            <img src="~/Images/architecture.png" class="w-100"/>
+        </div>
+    </div>
 </div>
 

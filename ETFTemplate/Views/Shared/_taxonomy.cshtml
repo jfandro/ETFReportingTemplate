@@ -1,0 +1,122 @@
+﻿
+<style>
+    .legend-container .legend {
+        position:relative !important;
+        top:unset;
+        left:unset;
+        background-color:unset;
+        max-height:unset;
+        overflow:unset;
+    }
+</style>
+
+<div class="row align-items-md-stretch">
+
+    <div class="col-lg-6 mx-auto">
+
+        <div class="mb-4 p-3 bg-light">
+            <h2>Classification SFDR</h2>
+            <div class="py-3">
+                <p>
+                    La réglementation SFDR vise à renforcer les obligations de transparence concernant les enjeux ESG
+                    que les professionnels de la gestion d'actifs prennent en compte, ou non,
+                    pour concevoir les placements qu'ils vous proposent.
+                    Ce sont des règles relatives à la publication d'informations sur la durabilité d'un placement.
+                    Le règlement définit notamment 3 types de produits :
+                    <ul>
+                        <li>les placements dits <strong>« Article 9 »</strong> qui présentent un objectif d'investissement durable;</li>
+                        <li>les placements dits <strong>« Article 8 »</strong> qui déclarent la prise en compte de critères sociaux et/ou environnementaux;</li>
+                        <li>
+                            les placements dits <strong>« Article 6 »</strong> qui n'ont pas d'objectif d'investissement durable et ne déclarent pas prendre en compte les critères ESG.
+                            Ce sont tous les autres placements qui ne sont ni « Article 8 » ni « Article 9 ».
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div id="sfdrmap" class="portfolio-content sectormap extra-breakdowns w-100 h-60" data-breakdown="SFDR"></div>
+        </div>
+
+        @if (ApplicationHelper.ExcludedThematics != "")
+        {
+            <div class="mb-4 p-3 bg-light">
+                <h2>Exclusions</h2>
+                <div class="py-3">
+                    <p>
+                        Le radar ci-dessous donne une <b>couverture</b>
+                        des thématiques que vous avez demandé à exclure
+                        de votre portefeuille.
+                        Votre demande (surc)
+                    </p>
+                </div>
+                <div id="radar-e" class="radar w-100 h-30" data-question="@ApplicationHelper.ExcludedThematics"></div>
+            </div>
+        }
+
+
+        @if (ApplicationHelper.ESGITR != "")
+        {
+            <div class="mb-4 p-3 bg-light">
+                <h2>Température implicite</h2>
+                <div class="py-3">
+                    <p>
+                        La température implicite est exprimée en degré celcius.
+                        Elle cherche à montrer l'alignement de la température des entreprises,
+                        des portefeuilles et des fonds
+                        sur les objectifs mondiaux en matière de température.
+                    </p>
+                </div>
+                <div id="mytemp" class="portfolio-content sectormap extra-breakdowns w-100 h-60" data-breakdown="@ApplicationHelper.ESGITR"></div>
+            </div>
+        }
+    </div>
+
+    <div class="col-lg-6 mx-auto">
+
+        @if (ApplicationHelper.ESGRating != "")
+        {
+            <div class="mb-4 p-3 bg-light">
+                <h2>Avis ESG</h2>
+                <div class="py-3">
+                    <p>
+                        D'un point de vue ESG (Environnement Social et Gouvernance des entreprises),
+                        les fonds de ce portefeuille font l'objet de nombreuses notes,
+                        analyses et de documents publiées
+                        par des organismes publics, d'agences privées de notations et d'analystes indépendants.
+                        Nous avons compilé pour nos clients ces différentes informations
+                        afin de vous donner <b>notre propre avis </b>
+                        pour qualifier l'impact de ce portefeuille dans les critères ESG.
+                        Compte tenu de la valeur actuelle du portefeuille, des poids de chaque support investi,
+                        voici le profil ESG de nos avis.
+                        La composition est revue quotidiennement en fonction des mouvements de marchés et des
+                        nouvelles publications émises.
+                    </p>
+                </div>
+                <div id="esgmap" class="portfolio-content sectormap extra-breakdowns w-100 h-60" data-breakdown="@ApplicationHelper.ESGRating" data-legend="#legend-esg"></div>
+                <div id="legend-esg" class="legend-container"></div>
+            </div>
+        }
+
+
+        @if (ApplicationHelper.TargetedThematics != "")
+        {
+            <div class="mb-4 p-3 bg-light">
+                <h2>Impact sur l'environnement</h2>
+                <div class="py-3">
+                    <p>
+                        Le radar ci-dessous regroupe l'intensité des différents impacts environnementaux
+                        engagés par vos investissements.
+                        Les informations affichées sont une compilation de données
+                        que nous avons jugés pertinents
+                        pour une meilleure transparence concernant les effets négatifs des produits financiers
+                        sur le développement durable. N'hésitez pas à me contacter pour plus
+                        d'informations.
+                    </p>
+                </div>
+                <div id="radar-t" class="radar w-100 h-30" data-question="@ApplicationHelper.TargetedThematics"></div>
+            </div>
+        }
+
+    </div>
+
+</div>
+

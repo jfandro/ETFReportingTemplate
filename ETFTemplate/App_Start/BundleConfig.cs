@@ -27,21 +27,21 @@ namespace ETFTemplate
             var bndscripts = new ScriptBundle("~/bundles/controllers", "~/bundles/controllers").Include(
               "~/Scripts/settings.js",
               "~/Scripts/session.js",
-              "~/Scripts/controllers/assetsController-1.2.js",
-              "~/Scripts/controllers/containersController-2.5.js",
+              "~/Scripts/controllers/assetsController-2.5.js",
+              "~/Scripts/controllers/containersController-2.85.js",
               "~/Scripts/controllers/credentialsController-1.1.js",
-              "~/Scripts/controllers/customersController-1.3.js",
-              "~/Scripts/controllers/instrumentsController-1.2.js",
-              "~/Scripts/controllers/leadsController-1.2.js",
-              "~/Scripts/controllers/operationsController-1.2.js",
-              "~/Scripts/controllers/portfoliosController-1.2.js",
-              "~/Scripts/controllers/questionnairesController-1.6.js",
-              "~/Scripts/controllers/roboController-2.4.js",
+              "~/Scripts/controllers/customersController-2.5.js",
+              "~/Scripts/controllers/instrumentsController-2.5.js",
+              "~/Scripts/controllers/leadsController-2.5.js",
+              "~/Scripts/controllers/operationsController-2.5.js",
+              "~/Scripts/controllers/portfoliosController-2.5.js",
+              "~/Scripts/controllers/questionnairesController-2.5.js",
+              "~/Scripts/controllers/roboController-2.5.js",
               "~/Scripts/controllers/signinController-1.0.js",
               "~/Scripts/controllers/universesController-1.2.js");
 
-            if (ApplicationHelper.RoboScript != "")
-                bndscripts.Include(ApplicationHelper.RoboScript);
+            if (RoboHelper.Script != "")
+                bndscripts.Include(RoboHelper.Script);
             bundles.Add(bndscripts);
 
             var bnd = new StyleBundle("~/Content/css").Include(

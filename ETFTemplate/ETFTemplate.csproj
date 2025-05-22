@@ -148,6 +148,8 @@
     <Compile Include="Services\MailService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Configuration\enexis.config" />
+    <Content Include="Configuration\jbs.config" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -174,6 +176,7 @@
     <Content Include="Content\prettify.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\architecture.png" />
     <Content Include="Images\emailviews.png" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -239,25 +242,26 @@
     <Content Include="Content\fa\scss\_variables.scss" />
     <Content Include="Content\fa\scss\font-awesome.scss" />
     <Content Include="Configuration\server.config" />
-    <Content Include="Configuration\jbs.config" />
-    <Content Include="Configuration\enexis.config" />
+    <Content Include="Configuration\mca.config" />
     <None Include="Properties\PublishProfiles\enexis - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ETFTemplate - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\JBPatrimoine - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mca - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\controllers\assetsController-1.2.js" />
+    <Content Include="Scripts\controllers\assetsController-2.5.js" />
     <Content Include="Scripts\controllers\credentialsController-1.1.js" />
-    <Content Include="Scripts\controllers\customersController-1.3.js" />
-    <Content Include="Scripts\controllers\instrumentsController-1.2.js" />
-    <Content Include="Scripts\controllers\containersController-2.5.js" />
-    <Content Include="Scripts\controllers\leadsController-1.2.js" />
-    <Content Include="Scripts\controllers\operationsController-1.2.js" />
-    <Content Include="Scripts\controllers\portfoliosController-1.2.js" />
-    <Content Include="Scripts\controllers\questionnairesController-1.6.js" />
-    <Content Include="Scripts\controllers\roboController-2.4.js" />
-    <Content Include="Scripts\controllers\robots\enexis-1.0.js" />
-    <Content Include="Scripts\controllers\robots\jbs-1.2.js" />
-    <Content Include="Scripts\controllers\robots\local-1.0.js" />
+    <Content Include="Scripts\controllers\customersController-2.5.js" />
+    <Content Include="Scripts\controllers\instrumentsController-2.5.js" />
+    <Content Include="Scripts\controllers\containersController-2.85.js" />
+    <Content Include="Scripts\controllers\leadsController-2.5.js" />
+    <Content Include="Scripts\controllers\operationsController-2.5.js" />
+    <Content Include="Scripts\controllers\portfoliosController-2.5.js" />
+    <Content Include="Scripts\controllers\questionnairesController-2.5.js" />
+    <Content Include="Scripts\controllers\roboController-2.5.js" />
+    <Content Include="Scripts\controllers\robots\mca-1.3.js" />
+    <Content Include="Scripts\controllers\robots\enexis-1.1.js" />
+    <Content Include="Scripts\controllers\robots\jbs-1.35.js" />
+    <Content Include="Scripts\controllers\robots\local-1.35.js" />
     <Content Include="Scripts\controllers\signinController-1.0.js" />
     <Content Include="Scripts\controllers\universesController-1.2.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -275,6 +279,12 @@
     <Content Include="Scripts\session.js" />
     <Content Include="Scripts\settings.js" />
     <Content Include="Scripts\string.format.js" />
+    <Content Include="Videos\Starting.mp4" />
+    <Content Include="Videos\Contact.mp4" />
+    <Content Include="Videos\Expositions.mp4" />
+    <Content Include="Videos\Portfolio.mp4" />
+    <Content Include="Videos\Espace.mp4" />
+    <Content Include="Videos\Questionnaire.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -296,7 +306,6 @@
     <Content Include="Views\Client\_book.cshtml" />
     <Content Include="Views\Client\_contact.cshtml" />
     <Content Include="Views\Client\_indicators.cshtml" />
-    <Content Include="Views\Client\_returns.cshtml" />
     <Content Include="Views\Shared\_credentials.cshtml" />
     <Content Include="Views\Client\_cashflows.cshtml" />
     <Content Include="Views\Client\_correlations.cshtml" />
@@ -319,10 +328,17 @@
     <Content Include="Views\Client\_notes.cshtml" />
     <Content Include="Views\Home\about.cshtml" />
     <Content Include="Views\Emails\ContactRequest.cshtml" />
+    <Content Include="Views\Shared\_taxonomy.cshtml" />
+    <Content Include="Views\Shared\_performances.cshtml" />
+    <Content Include="Views\Shared\_risks.cshtml" />
+    <Content Include="Views\Shared\_returns.cshtml" />
     <None Include="Web.Enexis.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.JBS.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.MCA.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
@@ -358,6 +374,16 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Enexis|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MCA|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
